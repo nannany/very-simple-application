@@ -6,5 +6,5 @@ RUN apt-get update && apt-get install -y \
     openjdk-8-jre \
  && cd simple \
  && mvn package
-ENTRYPOINT ["java","-jar","simple/target/simple-1.0-SNAPSHOT.jar"]
+CMD ["java","-jar","simple/target/simple-1.0-SNAPSHOT.jar"]
 
