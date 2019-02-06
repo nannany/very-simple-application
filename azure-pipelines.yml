@@ -11,7 +11,7 @@ pool:
 
 variables:
 - group: nannany_secret
-  imageName: 'simple-application-azure:$(build.buildId)'
+- imageName: 'simple-application-azure:$(build.buildId)'
 
 steps:
 - script: |
