@@ -10,8 +10,8 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-- group: nannany_secret
-- imageName: 'simple-application-azure:$(build.buildId)'
+  group: nannany_secret
+  imageName: 'simple-application-azure:$(build.buildId)'
 
 steps:
 - script: |
