@@ -10,8 +10,12 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'your-container-image-name:$(build.buildId)'
+  imageName: 'simple-application-azure:$(build.buildId)'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
+- script: |
+    docker build -f Dockerfile.maven -t nannany/$(imageName) .
+    docker login -u nannany -p $(DOCKER_HUB_PWD)
+    docker push nannany/$(imageName)
   displayName: 'docker build'
+
